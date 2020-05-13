@@ -18,4 +18,6 @@ export enum ActionType {
   REQUEST_TODO_LOADING,
   REQUEST_TODO_ERROR,
   RECEIVE_TODO,
+
+  SET_ERROR,
 }
