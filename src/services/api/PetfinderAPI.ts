@@ -13,4 +13,12 @@ export const axiosClient: AxiosInstance = axios.create({
 
 export default class PetfinderAPI {
   public static client: AxiosInstance = axiosClient;
+
+  public static getAnimals() {
+    return axiosClient.get("/animals");
+  }
+
+  public static getType(type: string) {
+    return axiosClient.get(`/animals?type=${type}`);
+  }
 }

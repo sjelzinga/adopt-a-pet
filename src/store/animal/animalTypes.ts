@@ -1,12 +1,12 @@
-export interface ITodo {
+export interface IAnimal {
   userId: number;
   id: number;
   title: string;
   body: string;
 }
 
-export interface ITodoState {
-  todo: ITodo | null;
+export interface IAnimalState {
+  animals: any[] | null;
   loading: boolean;
   error: string | null;
 }
