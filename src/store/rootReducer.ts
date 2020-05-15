@@ -1,9 +1,10 @@
 import { combineReducers } from "redux";
+import animalReducer from "store/animal/animalReducer";
 
 const rootReducer = combineReducers({
-  test: () => "test",
+  animals: animalReducer,
 });
 
-export type appState = ReturnType<typeof rootReducer>;
+export type AppState = ReturnType<typeof rootReducer>;
 
 export default rootReducer;

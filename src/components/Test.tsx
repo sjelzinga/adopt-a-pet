@@ -1,8 +1,16 @@
-import React from "react";
-import { useSelector } from "react-redux";
-import { appState } from "store/rootReducer";
+import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { AppState } from "store/rootReducer";
+
+import { requestAnimals } from "store/animal/animalActions";
 
 export const Test = () => {
-  const tst = useSelector<appState, String>((state) => state.test);
-  return <div>{tst}</div>;
+  const dispatch = useDispatch();
+  const animals = useSelector<AppState, any>((state) => state.animals.animals);
+
+  useEffect(() => {
+    // dispatch(requestAnimals);
+  }, []);
+  console.log(animals);
+  return <div>Hello</div>;
 };
