@@ -1,8 +1,10 @@
 export interface IAnimal {
-  userId: number;
   id: number;
-  title: string;
-  body: string;
+  type: string;
+  age: string;
+  gender: string;
+  name: string;
+  status: string;
 }
 
 export interface IAnimalState {
