@@ -13,7 +13,8 @@ export const AnimalList: React.FC = () => {
   }, []);
 
   return (
-    <ul>
+    <ul className="c-animal-list">
+      <li>Cool</li>
       {animals &&
         animals.map((animal: any) => <AnimalListItem animal={animal} />)}
     </ul>

@@ -1,0 +1,15 @@
+.c-animal-list-item {
+  width: 20rem;
+  height: 30rem;
+  background-color: red($color: #000000);
+
+  &__photo {
+    &--size {
+      width: 20rem;
+      height: 20rem;
+      object-fit: cover;
+    }
+  }
+  &__info {
+  }
+}

@@ -1,6 +1,6 @@
 import React from "react";
 
-import "./App.scss";
+// import "sass/app.scss";
 import { AnimalList } from "components/animals/AnimalList/AnimalList";
 import { Button } from "components/layout/Button/Button";
 
