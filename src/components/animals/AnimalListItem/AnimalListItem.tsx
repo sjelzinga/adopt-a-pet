@@ -6,8 +6,8 @@ interface IProps {
 }
 
 export const AnimalListItem: React.FC<any> = (props) => {
-  console.log(props.animal);
-  console.log(props.animal.primary_photo_cropped);
+  // console.log(props.animal);
+  // console.log(props.animal.primary_photo_cropped);
   const [pic, setPic] = useState("https://via.placeholder.com/300");
 
   const { name, age, type } = props.animal;
