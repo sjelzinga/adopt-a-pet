@@ -19,6 +19,7 @@ const paginationReducer = (
   state = initialState,
   action: IAction<IPagination>
 ) => {
+  console.log(action.payload);
   switch (action.type) {
     case ActionType.RECEIVE_PAGINATION:
       const {

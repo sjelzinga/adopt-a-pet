@@ -19,7 +19,7 @@ export function* getAnimals(params: any): any {
       PetfinderAPI.getAnimals,
       params.pageNumber
     );
-    console.log(data.pagination);
+    // console.log(data.animals);
     yield put(receiveAnimals(data.animals));
     const pagination = parsePagination(data.pagination);
     yield put(receivePagination(pagination));

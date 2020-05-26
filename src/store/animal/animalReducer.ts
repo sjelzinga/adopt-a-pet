@@ -8,6 +8,7 @@ const initialState: IAnimalState = {
 };
 
 const animalReducer = (state = initialState, action: IAction<any>) => {
+  console.log(action.payload);
   switch (action.type) {
     case ActionType.RECEIVE_ANIMALS:
       return { ...initialState, animals: action.payload };
