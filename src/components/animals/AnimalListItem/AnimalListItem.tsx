@@ -6,8 +6,8 @@ interface IProps {
 }
 
 export const AnimalListItem: React.FC<any> = (props) => {
-  console.log(props.animal);
-  console.log(props.animal.primary_photo_cropped);
+  // console.log(props.animal.name);
+  // console.log(props.animal.primary_photo_cropped);
   const [pic, setPic] = useState("https://via.placeholder.com/300");
 
   const { name, age, type } = props.animal;
@@ -16,7 +16,7 @@ export const AnimalListItem: React.FC<any> = (props) => {
     if (props.animal.primary_photo_cropped) {
       setPic(props.animal.primary_photo_cropped.small);
     }
-  }, []);
+  }, [props]);
 
   return (
     <li className="c-animal-list-item">
@@ -25,6 +25,7 @@ export const AnimalListItem: React.FC<any> = (props) => {
       </div>
 
       <div className="c-animal-list-item__info">
+        <div>{name}</div>
         <div>{age}</div>
         <div>{type}</div>
       </div>
