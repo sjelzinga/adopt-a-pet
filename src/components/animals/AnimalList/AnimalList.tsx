@@ -1,13 +1,21 @@
-import React from "react";
-import { useSelector } from "react-redux";
-import { AppState } from "store/rootReducer";
+import React from 'react';
+import { useSelector } from 'react-redux';
+import { AppState } from 'store/rootReducer';
 
-import { AnimalListItem } from "../AnimalListItem/AnimalListItem";
+import { AnimalListItem } from '../AnimalListItem/AnimalListItem';
+import { IAnimalState } from 'store/animal/animalTypes';
 
 export const AnimalList: React.FC = () => {
-  const animals = useSelector<AppState, any>((state) => state.animals.animals);
+  const { animals, loading } = useSelector<AppState, IAnimalState>(
+    (state) => state.animals
+  );
 
-  // console.log(animals);
+  //TODO: create skeleton for loading
+
+  if (loading) {
+    return <div>Loading.....</div>;
+  }
+
   return (
     <ul className="c-animal-list">
       <li>Cool</li>
