@@ -1,11 +1,14 @@
 import React from "react";
-import "./App.css";
-import { Test } from "components/Test";
+
+// import "sass/app.scss";
+import { AnimalList } from "components/animals/AnimalList/AnimalList";
+import { Button } from "components/layout/Button/Button";
 
 function App() {
   return (
     <div className="App">
-      <Test></Test>
+      <AnimalList />
+      <Button></Button>
     </div>
   );
 }
