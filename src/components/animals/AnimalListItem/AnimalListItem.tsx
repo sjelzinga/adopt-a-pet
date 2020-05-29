@@ -1,22 +1,20 @@
-import React, { useState, useEffect } from "react";
-import { IAnimal } from "store/animal/animalTypes";
+import React, { useState, useEffect } from 'react';
+import { IAnimal } from 'store/animal/animalTypes';
 
 interface IProps {
   animal: IAnimal;
 }
 
-export const AnimalListItem: React.FC<any> = (props) => {
-  // console.log(props.animal.name);
-  // console.log(props.animal.primary_photo_cropped);
-  const [pic, setPic] = useState("https://via.placeholder.com/300");
+export const AnimalListItem: React.FC<IProps> = ({ animal }) => {
+  const [pic, setPic] = useState('https://via.placeholder.com/300');
 
-  const { name, age, type } = props.animal;
+  const { name, age, type } = animal;
 
   useEffect(() => {
-    if (props.animal.primary_photo_cropped) {
-      setPic(props.animal.primary_photo_cropped.small);
+    if (animal.primary_photo_cropped) {
+      setPic(animal.primary_photo_cropped.small);
     }
-  }, [props]);
+  }, [animal]);
 
   return (
     <li className="c-animal-list-item">

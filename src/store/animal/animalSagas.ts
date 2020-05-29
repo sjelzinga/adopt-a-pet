@@ -1,31 +1,32 @@
-import { call, put } from "redux-saga/effects";
-import { AxiosResponse } from "axios";
+import { call, put } from 'redux-saga/effects';
+import { AxiosResponse } from 'axios';
 
-import { ActionType } from "store/globalTypes";
-import PetfinderAPI from "services/api/PetfinderAPI";
-import { receiveAnimals } from "./animalActions";
+import { IAction } from 'store/globalTypes';
+import PetfinderAPI from 'services/api/PetfinderAPI';
+import {
+  requestAnimalsLoading,
+  receiveAnimals,
+  requestAnimalsError,
+} from './animalActions';
 import {
   receivePagination,
   IPagination,
-} from "store/pagination/paginationActions";
+} from 'store/pagination/paginationActions';
 
-// type actionParams = { type: ActionType; params: any };
-
-export function* getAnimals(params: any): any {
-  console.log(params);
-  yield put({ type: ActionType.REQUEST_ANIMALS_LOADING });
+export function* getAnimals(params: IAction<number>): any {
+  yield put(requestAnimalsLoading);
   try {
     const { data }: AxiosResponse<any> = yield call(
       PetfinderAPI.getAnimals,
-      params.pageNumber
+      params.payload
     );
-    // console.log(data.animals);
+
     yield put(receiveAnimals(data.animals));
     const pagination = parsePagination(data.pagination);
     yield put(receivePagination(pagination));
   } catch (error) {
     console.log(error.message);
-    yield put({ type: ActionType.REQUEST_ANIMALS_ERROR });
+    yield put(requestAnimalsError);
   }
 }
 
