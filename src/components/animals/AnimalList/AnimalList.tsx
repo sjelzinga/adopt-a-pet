@@ -1,9 +1,9 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
-import { AppState } from 'store/rootReducer';
+import React from "react";
+import { useSelector } from "react-redux";
+import { AppState } from "store/rootReducer";
 
-import { AnimalListItem } from '../AnimalListItem/AnimalListItem';
-import { IAnimalState } from 'store/animal/animalTypes';
+import { AnimalListItem } from "../AnimalListItem/AnimalListItem";
+import { IAnimalState } from "store/animal/animalTypes";
 
 export const AnimalList: React.FC = () => {
   const { animals, loading } = useSelector<AppState, IAnimalState>(
@@ -18,7 +18,6 @@ export const AnimalList: React.FC = () => {
 
   return (
     <ul className="c-animal-list">
-      <li>Cool</li>
       {animals &&
         animals.map((animal: any) => (
           <AnimalListItem key={animal.id} animal={animal} />

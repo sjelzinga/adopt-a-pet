@@ -1,17 +1,17 @@
-import { call, put } from 'redux-saga/effects';
-import { AxiosResponse } from 'axios';
+import { call, put } from "redux-saga/effects";
+import { AxiosResponse } from "axios";
 
-import { IAction } from 'store/globalTypes';
-import PetfinderAPI from 'services/api/PetfinderAPI';
+import { IAction } from "store/globalTypes";
+import PetfinderAPI from "services/api/PetfinderAPI";
 import {
   requestAnimalsLoading,
   receiveAnimals,
   requestAnimalsError,
-} from './animalActions';
+} from "./animalActions";
 import {
   receivePagination,
   IPagination,
-} from 'store/pagination/paginationActions';
+} from "store/pagination/paginationActions";
 
 export function* getAnimals(params: IAction<number>): any {
   yield put(requestAnimalsLoading);
@@ -25,7 +25,8 @@ export function* getAnimals(params: IAction<number>): any {
     const pagination = parsePagination(data.pagination);
     yield put(receivePagination(pagination));
   } catch (error) {
-    console.log(error.message);
+    // console.log(error.message);
+    console.log(error.response);
     yield put(requestAnimalsError);
   }
 }
