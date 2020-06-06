@@ -1,36 +1,35 @@
 import React, { useState, useEffect } from "react";
 import { IAnimal } from "store/animal/animalTypes";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faVenus, faMars } from "@fortawesome/free-solid-svg-icons";
+
+import { ReactComponent as Male } from "assets/svgs/male.svg";
+import { ReactComponent as Female } from "assets/svgs/female.svg";
+import photoNotFound from "assets/images/not-found.png";
 
 interface IProps {
   animal: IAnimal;
 }
 
 export const AnimalListItem: React.FC<IProps> = ({ animal }) => {
-  const [pic, setPic] = useState("https://via.placeholder.com/300");
+  const [photo, setPhoto] = useState(photoNotFound);
 
   const { name, age, gender, breeds } = animal;
 
   useEffect(() => {
     if (animal.primary_photo_cropped) {
-      setPic(animal.primary_photo_cropped.small);
+      setPhoto(animal.primary_photo_cropped.small);
     }
   }, [animal]);
 
-  const genderIcon = (
-    <FontAwesomeIcon
-      icon={gender === "Male" ? faMars : faVenus}
-      size="2x"
-      className="gender-icon"
-    />
-  );
+  const genderIcon =
+    gender === "Male" ? (
+      <Male className="gender-icon" />
+    ) : (
+      <Female className="gender-icon" />
+    );
 
   return (
     <li className="c-animal-list-item">
-      <div className="c-animal-list-item__photo">
-        <img className="c-animal-list-item__photo--size" src={pic} alt="pet" />
-      </div>
+      <img className="c-animal-list-item__photo" src={photo} alt="pet" />
 
       <div className="c-animal-list-item__info">
         <div className="c-animal-list-item__info__row">
