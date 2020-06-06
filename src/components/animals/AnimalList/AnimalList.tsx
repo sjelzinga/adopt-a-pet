@@ -4,6 +4,8 @@ import { AppState } from "store/rootReducer";
 
 import { AnimalListItem } from "../AnimalListItem/AnimalListItem";
 import { IAnimalState } from "store/animal/animalTypes";
+import { Skeleton } from "components/layout/Skeleton/Skeleton";
+import { AnimalListItemSkeleton } from "../AnimalListItem/AnimalListItemSkeleton";
 
 export const AnimalList: React.FC = () => {
   const { animals, loading } = useSelector<AppState, IAnimalState>(
@@ -12,8 +14,14 @@ export const AnimalList: React.FC = () => {
 
   //TODO: create skeleton for loading
 
+  let loadingSkeletons = [];
+
+  for (let i = 0; i < 5; i++) {
+    loadingSkeletons.push(<AnimalListItemSkeleton />);
+  }
+
   if (loading) {
-    return <div>Loading.....</div>;
+    return <div>{loadingSkeletons}</div>;
   }
 
   return (

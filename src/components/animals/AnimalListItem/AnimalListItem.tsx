@@ -4,6 +4,7 @@ import { IAnimal } from "store/animal/animalTypes";
 import { ReactComponent as Male } from "assets/svgs/male.svg";
 import { ReactComponent as Female } from "assets/svgs/female.svg";
 import photoNotFound from "assets/images/not-found.png";
+import { Skeleton } from "components/layout/Skeleton/Skeleton";
 
 interface IProps {
   animal: IAnimal;
@@ -11,7 +12,6 @@ interface IProps {
 
 export const AnimalListItem: React.FC<IProps> = ({ animal }) => {
   const [photo, setPhoto] = useState(photoNotFound);
-
   const { name, age, gender, breeds } = animal;
 
   useEffect(() => {
