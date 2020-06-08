@@ -1,4 +1,4 @@
-import { Action } from 'redux';
+import { Action } from "redux";
 
 export interface IAction<T> extends Action<ActionType> {
   payload: T;
@@ -13,6 +13,7 @@ export enum ActionType {
   REQUEST_ANIMALS_LOADING,
   REQUEST_ANIMALS_ERROR,
   RECEIVE_ANIMALS,
+  SELECT_ANIMAL,
 
   RECEIVE_PAGINATION,
 }

@@ -1,5 +1,7 @@
 import React from "react";
 
-export const Button = () => {
-  return <button className="c-button">I'm a button</button>;
+interface IProps {}
+
+export const Button: React.FC<IProps> = ({ children }) => {
+  return <button className="c-button">{children}</button>;
 };

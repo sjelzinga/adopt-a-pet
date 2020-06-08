@@ -1,3 +1,6 @@
+import { Action } from "redux";
+import { ActionType } from "store/globalTypes";
+
 type photoObject = { small: string; medium: string; large: string };
 type breedObject = {
   primary: string;
@@ -22,4 +25,5 @@ export interface IAnimalState {
   animals: any[] | null;
   loading: boolean;
   error: string | null;
+  animal: IAnimal | null;
 }
