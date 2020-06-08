@@ -1,5 +1,12 @@
 .c-animal-list {
-  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;
   margin: 0;
   padding: 0;
+
+  background-color: #f6f6f6;
+  list-style-type: none;
 }

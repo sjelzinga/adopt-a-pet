@@ -1,16 +1,21 @@
-import { ActionType } from "store/globalTypes";
+import { ActionType, IAction } from 'store/globalTypes';
+import { IAnimal } from './animalTypes';
+import { Action } from 'redux';
 
-// export const requestAnimals = { type: ActionType.REQUEST_ANIMALS };
+export const requestAnimalsLoading: Action<ActionType> = {
+  type: ActionType.REQUEST_ANIMALS_LOADING,
+};
 
-// type filterOptions = { breed: string };
-// type paginationOptions = { pageNumber: number };
-
-export const requestAnimals = (pageNumber: number) => ({
+export const requestAnimals = (pageNumber: number): IAction<number> => ({
   type: ActionType.REQUEST_ANIMALS,
-  pageNumber,
+  payload: pageNumber,
 });
 
-export const receiveAnimals = (animals: any[]) => ({
+export const receiveAnimals = (animals: IAnimal[]): IAction<IAnimal[]> => ({
   type: ActionType.RECEIVE_ANIMALS,
   payload: animals,
 });
+
+export const requestAnimalsError: Action<ActionType> = {
+  type: ActionType.REQUEST_ANIMALS_ERROR,
+};
