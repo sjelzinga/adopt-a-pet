@@ -4,7 +4,6 @@ import { AppState } from "store/rootReducer";
 
 import { AnimalListItem } from "../AnimalListItem/AnimalListItem";
 import { IAnimalState } from "store/animal/animalTypes";
-import { Skeleton } from "components/layout/Skeleton/Skeleton";
 import { AnimalListItemSkeleton } from "../AnimalListItem/AnimalListItemSkeleton";
 
 export const AnimalList: React.FC = () => {
@@ -12,12 +11,11 @@ export const AnimalList: React.FC = () => {
     (state) => state.animals
   );
 
-  //TODO: create skeleton for loading
-
+  //TODO: find better implementation for loading skeleton
   let loadingSkeletons = [];
 
   for (let i = 0; i < 5; i++) {
-    loadingSkeletons.push(<AnimalListItemSkeleton />);
+    loadingSkeletons.push(<AnimalListItemSkeleton key={i} />);
   }
 
   if (loading) {

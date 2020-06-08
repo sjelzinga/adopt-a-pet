@@ -1,6 +1,6 @@
-import { ActionType, IAction } from 'store/globalTypes';
-import { IAnimal } from './animalTypes';
-import { Action } from 'redux';
+import { ActionType, IAction } from "store/globalTypes";
+import { IAnimal } from "./animalTypes";
+import { Action } from "redux";
 
 export const requestAnimalsLoading: Action<ActionType> = {
   type: ActionType.REQUEST_ANIMALS_LOADING,
@@ -19,3 +19,8 @@ export const receiveAnimals = (animals: IAnimal[]): IAction<IAnimal[]> => ({
 export const requestAnimalsError: Action<ActionType> = {
   type: ActionType.REQUEST_ANIMALS_ERROR,
 };
+
+export const selectAnimal = (animalId: number): IAction<number> => ({
+  type: ActionType.SELECT_ANIMAL,
+  payload: animalId,
+});

@@ -27,6 +27,7 @@ export function* getAnimals(params: IAction<number>): any {
   } catch (error) {
     // console.log(error.message);
     console.log(error.response);
+    // console.log(error.response.status);
     yield put(requestAnimalsError);
   }
 }

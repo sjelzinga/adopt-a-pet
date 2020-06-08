@@ -2,10 +2,13 @@
 
 @import "settings/settings.variables.scss";
 
-@import "app.scss";
+@import "index.scss";
 
+@import "components/component.animal-details.scss";
 @import "components/component.animal-list.scss";
 @import "components/component.animal-list-item.scss";
 @import "components/component.button.scss";
 @import "components/component.page-nav.scss";
 @import "components/component.skeleton.scss";
+
+@import "pages/page.homepage.scss";
