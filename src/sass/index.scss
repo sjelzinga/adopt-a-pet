@@ -9,7 +9,8 @@ html {
 
 #root {
   width: 100%;
-  min-height: -webkit-fill-available;
+  // min-height: -webkit-fill-available;
+  min-height: 100%;
 
   background-color: $background-color;
 

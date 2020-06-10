@@ -5,7 +5,16 @@
   font-size: $font-size-default;
   font-family: $font-default;
 
-  height: 4rem;
+  &--size-full {
+    height: 6rem;
+    width: 100%;
+  }
 
-  background-color: $primary-color;
+  &--theme-transparent {
+    background-color: none;
+  }
+
+  &--theme-primary {
+    background-color: $primary-color;
+  }
 }

@@ -1,7 +1,33 @@
 import React from "react";
+import classnames from "classnames";
 
-interface IProps {}
+type ButtonTheme = "transparent" | "primary";
+type ButtonSize = "full";
 
-export const Button: React.FC<IProps> = ({ children }) => {
-  return <button className="c-button">{children}</button>;
+interface IProps
+  extends React.DetailedHTMLProps<
+    React.ButtonHTMLAttributes<HTMLButtonElement>,
+    HTMLButtonElement
+  > {
+  theme?: ButtonTheme;
+  size?: ButtonSize;
+}
+
+export const Button: React.FC<IProps> = (props) => {
+  const { children, className, theme, size, ...rest } = props;
+
+  const styling = classnames({
+    "c-button": true,
+    [`c-button--theme-${theme}`]: Boolean(theme),
+    [`c-button--size-${size}`]: Boolean(size),
+    [`${className}`]: Boolean(className),
+  });
+
+  console.log(styling);
+
+  return (
+    <button {...rest} className={styling}>
+      {props.children}
+    </button>
+  );
 };
