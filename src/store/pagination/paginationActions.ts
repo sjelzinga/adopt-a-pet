@@ -1,4 +1,4 @@
-import { ActionType, IAction } from 'store/globalTypes';
+import { ActionType, IAction } from "store/globalTypes";
 
 export interface IPagination {
   countPerPage: number;
@@ -13,3 +13,6 @@ export const receivePagination = (
   type: ActionType.RECEIVE_PAGINATION,
   payload: pagination,
 });
+
+export const previousPageAction = { type: ActionType.PREVIOUS_PAGE };
+export const nextPageAction = { type: ActionType.NEXT_PAGE };

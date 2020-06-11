@@ -1,5 +1,5 @@
-import { ActionType, IAction } from 'store/globalTypes';
-import { IPagination } from './paginationActions';
+import { ActionType, IAction } from "store/globalTypes";
+import { IPagination } from "./paginationActions";
 
 export interface IPaginationState {
   countPerPage: number;
@@ -19,7 +19,6 @@ const paginationReducer = (
   state = initialState,
   action: IAction<IPagination>
 ) => {
-  console.log(action.payload, 'pagination');
   switch (action.type) {
     case ActionType.RECEIVE_PAGINATION:
       const {
@@ -34,6 +33,16 @@ const paginationReducer = (
         totalCount,
         currentPage,
         totalPages,
+      };
+    case ActionType.NEXT_PAGE:
+      return {
+        ...state,
+        currentPage: Math.min(state.currentPage + 1, state.totalPages),
+      };
+    case ActionType.PREVIOUS_PAGE:
+      return {
+        ...state,
+        currentPage: Math.min(state.currentPage + 1, state.totalPages),
       };
     default:
       return state;

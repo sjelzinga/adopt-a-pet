@@ -16,4 +16,6 @@ export enum ActionType {
   SELECT_ANIMAL,
 
   RECEIVE_PAGINATION,
+  PREVIOUS_PAGE,
+  NEXT_PAGE,
 }
