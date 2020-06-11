@@ -19,7 +19,7 @@ export const AnimalList: React.FC = () => {
   }
 
   if (loading) {
-    return <div>{loadingSkeletons}</div>;
+    return <ul className="c-animal-list">{loadingSkeletons}</ul>;
   }
 
   return (

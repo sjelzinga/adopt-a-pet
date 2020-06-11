@@ -13,7 +13,7 @@ interface IProps
   size?: ButtonSize;
 }
 
-export const Button: React.FC<IProps> = (props) => {
+const Button: React.FC<IProps> = (props) => {
   const { children, className, theme, size, ...rest } = props;
 
   const styling = classnames({
@@ -31,3 +31,5 @@ export const Button: React.FC<IProps> = (props) => {
     </button>
   );
 };
+
+export default Button;
