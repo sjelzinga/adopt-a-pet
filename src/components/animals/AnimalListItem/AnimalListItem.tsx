@@ -28,9 +28,9 @@ export const AnimalListItem: React.FC<IProps> = ({ animal }) => {
 
   const genderIcon =
     gender === "Male" ? (
-      <Male className="gender-icon" />
+      <Male className="gender-icon-small" />
     ) : (
-      <Female className="gender-icon" />
+      <Female className="gender-icon-small" />
     );
 
   return (

@@ -1,0 +1,23 @@
+.c-check-list {
+  list-style: none;
+  padding: 0;
+  padding-left: 1.5rem;
+
+  &--theme-horizontal {
+    display: flex;
+  }
+
+  &__item {
+    padding: 0.5rem 0;
+
+    &__icon {
+      margin-right: 0.5rem;
+    }
+    &__icon-red {
+    }
+
+    &__value {
+      margin-right: 1.5rem;
+    }
+  }
+}
