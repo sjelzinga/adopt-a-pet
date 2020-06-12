@@ -25,7 +25,7 @@ const animalReducer = (state = initialState, action: IAction<payloadTypes>) => {
     case ActionType.SELECT_ANIMAL:
       if (state.animals) {
         return {
-          ...initialState,
+          ...state,
           animal: selectAnimal(state.animals, action.payload),
         };
       }

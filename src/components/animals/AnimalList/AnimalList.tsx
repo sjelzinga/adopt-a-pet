@@ -11,6 +11,7 @@ export const AnimalList: React.FC = () => {
     (state) => state.animals
   );
 
+  console.log(animals);
   //TODO: find better implementation for loading skeleton
   let loadingSkeletons = [];
 

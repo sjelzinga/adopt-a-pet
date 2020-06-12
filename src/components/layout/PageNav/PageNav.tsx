@@ -15,33 +15,29 @@ import {
 
 interface IProps {
   pages: number;
-  onPageChange: (pageNumber: number) => void;
+  // onPageChange: (pageNumber: number) => void;
 }
 
-export const PageNav: React.FC<IProps> = ({ pages, onPageChange }) => {
+export const PageNav: React.FC<IProps> = ({ pages }) => {
   const dispatch = useDispatch();
   const { currentPage } = useSelector<AppState, IPagination>(
     (state) => state.pagination
   );
 
-  // const [currentPage, setCurrentPage] = useState(1);
-
-  useEffect(() => {
-    console.log("in");
-    onPageChange(currentPage);
-  }, [currentPage]);
+  // useEffect(() => {
+  //   console.log("change pageee");
+  //   onPageChange(currentPage);
+  // }, [currentPage]);
 
   const changeCurrentPageNumber = (e: React.ChangeEvent<HTMLInputElement>) => {
-    // setCurrentPage(parseInt(e.target.value));
+    // dispatch an action
   };
 
   const previousPage = () => {
-    // setCurrentPage((currentPage) => Math.max(currentPage - 1, 1));
     dispatch(previousPageAction);
   };
 
   const nextPage = () => {
-    // setCurrentPage((currentPage) => Math.min(currentPage + 1, pages));
     dispatch(nextPageAction);
   };
 
