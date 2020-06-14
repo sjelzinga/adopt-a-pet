@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import { AnimalList } from "components/animals/AnimalList/AnimalList";
@@ -8,19 +8,14 @@ import { AppState } from "store/rootReducer";
 import { IPagination } from "store/pagination/paginationActions";
 
 export const HomePage = () => {
-  const dispatch = useDispatch();
   const { totalPages } = useSelector<AppState, IPagination>(
     (state) => state.pagination
   );
 
-  const getAnimals = (pageNumber: number) => {
-    dispatch(requestAnimals(pageNumber));
-  };
-
   return (
     <div className="p-homepage">
       <AnimalList />
-      <PageNav pages={totalPages} onPageChange={getAnimals} />
+      <PageNav pages={totalPages} />
     </div>
   );
 };

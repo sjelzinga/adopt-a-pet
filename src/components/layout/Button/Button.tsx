@@ -23,8 +23,6 @@ const Button: React.FC<IProps> = (props) => {
     [`${className}`]: Boolean(className),
   });
 
-  console.log(styling);
-
   return (
     <button {...rest} className={styling}>
       {props.children}
