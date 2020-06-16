@@ -1,0 +1,61 @@
+.c-animal-list-item {
+  max-width: 100%;
+  display: flex;
+  height: 13rem;
+  margin: 1rem;
+
+  &__photo {
+    width: 13rem;
+    height: 13rem;
+    object-fit: cover;
+    border: 0.5px solid rgb(187, 187, 187);
+  }
+
+  &__info {
+    margin-top: 1.1rem;
+    padding: 0.5rem 1rem;
+
+    width: 17rem;
+    height: 11rem;
+
+    background-color: #fff;
+    border-radius: $border-radius-standard;
+
+    &__row {
+      height: 3rem;
+      width: 15rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    &--name {
+      font-weight: 700;
+    }
+
+    &--gender {
+      height: 20px;
+      width: 20px;
+    }
+
+    &--breed {
+      font-size: 13px;
+      font-weight: 500;
+      margin: 0.8rem 0;
+
+      width: 15rem;
+    }
+    &--age {
+      font-size: 11px;
+      font-weight: 300;
+
+      width: 10rem;
+    }
+  }
+}
+
+.gender-icon-small {
+  height: 2rem;
+  width: 2rem;
+  fill: $font-color;
+}
