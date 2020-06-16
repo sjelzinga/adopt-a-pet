@@ -1,5 +1,19 @@
 import React from "react";
 
-export const StickyContainer: React.FC = ({ children }) => {
-  return <div className="c-sticky-container">{children}</div>;
+type ContainerPosition = "top" | "bottom";
+
+interface IProps {
+  position: ContainerPosition;
+}
+
+const StickyContainer: React.FC<IProps> = ({ children, position }) => {
+  return (
+    <div className={`c-sticky-container position-${position}`}>{children}</div>
+  );
 };
+
+// StickyContainer.defaultProps = {
+//   position
+// }
+
+export default StickyContainer;

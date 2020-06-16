@@ -12,7 +12,7 @@ import { ReactComponent as Male } from "assets/svgs/male.svg";
 import { ReactComponent as Female } from "assets/svgs/female.svg";
 import { Header } from "components/layout/Header/Header";
 
-import { StickyContainer } from "components/layout/StickyContainer/StickyContainer";
+import StickyContainer from "components/layout/StickyContainer/StickyContainer";
 import { CheckList } from "components/CheckList/CheckList";
 
 interface MatchParams {
@@ -76,7 +76,7 @@ export const AnimalDetails: React.FC<IProps> = ({ match }) => {
         <CheckList list={attributes} />
         <div className="c-animal-details__status"></div>
       </div>
-      <StickyContainer>
+      <StickyContainer position="bottom">
         <Button
           className="c-animal-details__btn"
           theme="primary"

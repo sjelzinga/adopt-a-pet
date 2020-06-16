@@ -1,0 +1,49 @@
+.filter-menu {
+  width: 100%;
+  background-color: white;
+  padding: 0 1.5rem;
+
+  &__header {
+    // width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+  }
+
+  &__logo {
+    font-weight: 700;
+
+    &--icon {
+      transform: rotate(-40deg);
+      margin: 0 1rem 0 0;
+    }
+  }
+
+  &__slide-out {
+    &__button_container {
+    }
+
+    &__button {
+      padding: 1rem;
+      margin: 1rem 2rem 0 0;
+      color: white;
+      border-radius: 1.5rem;
+    }
+  }
+}
+
+.open {
+  animation: slide-open 1s forwards;
+}
+
+@keyframes slide-open {
+  from {
+    transform: translateY(0px);
+    transform-origin: top center;
+  }
+  to {
+    transform: translateY(190px);
+    transform-origin: top center;
+  }
+}
